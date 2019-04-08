@@ -2,6 +2,7 @@ package com.people.management.controller;
 
 import com.people.management.entity.User;
 import com.people.management.service.UserService;
+import com.people.management.until.LogUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,6 +19,9 @@ import java.util.Map;
 @Controller
 @RequestMapping(value = {"/user"})
 public class LoginController {
+
+
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(LoginController.class);
 
     /**
      * 最开始希望用Map的形式接参数，后来不用了，将请求对应的接受方式记录一下
@@ -64,7 +68,7 @@ public class LoginController {
     public String userLogin(@RequestParam("username") String username,
                             @RequestParam("password") String password,
                             HttpServletRequest request){
-
+        log.error("888888888888888888888888888888888");
         if(StringUtils.isEmpty(username)){
             return "用户名不能为空";
         }

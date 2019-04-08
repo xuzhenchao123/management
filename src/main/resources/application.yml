@@ -1,0 +1,33 @@
+
+server:
+  port: 8081
+
+spring:
+    datasource:
+        name: test
+        url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+        username: root
+        password: rootadmin
+        driver-class-name: com.mysql.jdbc.Driver
+#    mail:
+##        host: smtp.163.com
+##        username: by1790979952@163.com
+##        password:  xzccm123..
+#        host: smtp.qq.com
+#        username: 1790979952@qq.com
+#        password:  okweajvoawmyedah
+#        port: 465
+#        default-encoding: UTF-8
+#        properties:
+#          mail:
+#            smtp:
+#              socketFactory:
+#                class=javax:
+#                  net:
+#                    ssl: SSLSocketFactory
+#
+#             debug: true
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml  #注意：一定要对应mapper映射xml文件的所在路径
+  type-aliases-package: com.people.management.entity # 注意：对应实体类的路径
